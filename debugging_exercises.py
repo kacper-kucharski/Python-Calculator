@@ -29,7 +29,7 @@ avg = sum / len(grades)
 # Opinions:
 # Great! if average is greater than or equal to 90
 # Good! if average is 80 or higher but less than 90
-# Okay! if average is 70 or higher but less than 80
+# Okay!. if average is 70 or higher but less than 80
 # Meh if average is 65 or higher and less than 70
 # No if average is less than 65
 if avg > 90:

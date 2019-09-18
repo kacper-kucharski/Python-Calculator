@@ -10,7 +10,7 @@ def get_digit(number, n):
     return int(str(number)[-n - 1])                 # Returns the n-th digit
 
 '''
-Sets the n-th digit of number to v.
+Sets the n-th digit of number to v
 Note that n is right-aligned (i.e. n=0 is the right-most digit, n=1 is one digit to 
 the left of the right-most digit, etc.). If number is too short (i.e. contains to few
 digits, number is padded with zeroes).

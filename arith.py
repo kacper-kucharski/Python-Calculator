@@ -5,7 +5,7 @@ from functools import reduce
 from operator import add
 
 '''
-Calculates the sum of a and b.
+Calculates the sum of a and b
 Only supports positive integers.
 '''
 def sum(a, b):

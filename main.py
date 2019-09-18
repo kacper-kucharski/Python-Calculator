@@ -5,7 +5,7 @@ import functions
 import types
 
 '''
-The entry-point of our application.
+The entry-point of our application
 '''
 def main():
     # Indicates whether or not our application should quit

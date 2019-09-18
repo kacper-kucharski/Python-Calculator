@@ -7,7 +7,7 @@ function. The dictionary contains of key: value pairs, where key is a string
 containing the function name and value is a reference to the function that
 was implemented.
 In case a new function is added to the calculator, make sure to update this
-dictionary.
+dictionary
 '''
 function_table = {
     'sub': arith.sub,
