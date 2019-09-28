@@ -5,7 +5,7 @@ import functions
 import types
 
 '''
-The entry-point of our application
+The entry-point of our application.
 '''
 def main():
     # Indicates whether or not our application should quit
@@ -19,7 +19,9 @@ def main():
         elif command == "help":
             functions.print_functions()
         elif command == "version":
-            print("calculator version 0.1")    
+            print("calculator version 0.1")
+        else: 
+            functions.process_line(command)    
   
 if __name__== "__main__":
     main()
