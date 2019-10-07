@@ -17,6 +17,48 @@ def sum(a, b):
     max_length = max(length_a, length_b)            # Calculate maximum a if a > b, else b
     
     # Implement algorithm
+    answer_list = []
+    # Add digits start with the most right
+    a_list = [int(i) for i in str(a)]
+    b_list = [int(i) for i in str(b)]
+    
+    if a > b:
+        op1 = a_list
+        op2 = b_list
+    else:
+        op1 = b_list
+        op2 = a_list
+
+    op1.reverse()
+    op2.reverse()
+
+    for x in range(max_length+1):
+        if c > 0:
+            try:
+                r = op1[x] + op2[x] + c
+            except:
+                r = c
+        else:
+            try:
+                r = op1[x] + op2[x]
+            except:
+                try:
+                    r = op1[x]
+                except:
+                    break
+
+        c = 0
+
+        if r > 10:
+            r -= 10
+            c += 1
+        answer_list.append(r)
+    
+    answer_list.reverse()
+    r = ''
+
+    for x in answer_list:
+        r = r + str(x)
 
     return r
 
