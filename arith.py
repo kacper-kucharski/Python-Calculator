@@ -37,7 +37,10 @@ def sum(a, b):
             try:
                 r = op1[x] + op2[x] + c
             except:
-                r = c
+                try:
+                    r = op1[x] + c
+                except:
+                    r = c     
         else:
             try:
                 r = op1[x] + op2[x]
@@ -49,7 +52,7 @@ def sum(a, b):
 
         c = 0
 
-        if r > 10:
+        if r >= 10:
             r -= 10
             c += 1
         answer_list.append(r)
@@ -59,8 +62,8 @@ def sum(a, b):
 
     for x in answer_list:
         r = r + str(x)
-
-    return r
+    
+    return int(r)
 
 '''
 Calculates the subtraction of a and b.
@@ -89,6 +92,16 @@ Only supports positive integers.
 def multiply(a, b):
     r = 0                                     # Result
     # Implement algorithm
+    if a == 1:
+        r = b
+    elif b == 1:
+        r = a
+    else:
+        r = sum(a, a)
+        
+        for x in range(b-2):
+            r = sum(r, a)
+
     return r
 
 '''
