@@ -141,7 +141,7 @@ def multiply(a, b):
     else:
         r = sum(a, a)
         
-        for x in range(b-2):
+        for _ in range(b-2):
             r = sum(r, a)
 
     return r
@@ -153,7 +153,7 @@ Only supports positive integers.
 def divide(a, b):                       
     i = 0                                     # Result
     # Implement algorithm
-    while a > b:
+    while a >= b:
         a = sub(a, b)
         i += 1
 
@@ -170,6 +170,8 @@ Only supports positive integers.
 def power(a, b):
     r = 1                                     # Result
     # Implement algorithm
+    for _ in range(b):
+        r = multiply(r, a)
     return r
 
 '''
@@ -184,8 +186,14 @@ def sqrt(a):
     r = 1                                           # Result of multiplication with i
     
     # Implement algorithm
+    while (r != a) and (r < a) :
+        r = multiply(i, i)
+        i += 1
 
-    return sub(i, 1)                                # Subtract one from increment
+    if r > a:
+        i -= 1
+
+    return sub(i, 1)                             # Subtract one from increment
 
 '''
 Calculates the modulo of a and b.
@@ -199,14 +207,33 @@ Calculates the gcd of a and b.
 Only supports positive integers.
 '''
 def gcd(a, b):
-    return
+    answer = []
+    remainder = mod(a, b)
+    answer.append(remainder)
+    real_answer = answer[0]
+    while remainder != 0:
+        a = b
+        b = remainder
+        remainder = mod(a, b)
+        answer.append(remainder)
+        
+    for x in range(len(answer)):
+        if (answer[x] != 0):
+            real_answer = answer[x]    
+    return real_answer
+
 
 '''
 Calculates the lcm of a two integers.
 Only supports positive integers.
 '''
 def lcm(a, b):
-    return
+    try:
+        r = a * b / gcd(a, b)
+    except:
+        r = a
+
+    return int(r)
 
 '''
 Converts a binary string to a decimal integer.
